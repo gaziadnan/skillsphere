@@ -9,12 +9,12 @@ export default function PopularCourses() {
     .slice(0, 3);
 
   return (
-    <section className="bg-[#F8FAFC] py-16">
+    <section className="bg-[#F8FAFC] py-10">
       <div className="max-w-[1400px] mx-auto px-4">
         
         {/* Heading */}
-        <div className="mb-10">
-          <h2 className="text-3xl font-bold text-gray-800">
+        <div className="mb-10 mt-8">
+          <h2 className="text-3xl text-center font-bold text-gray-800">
             Popular Courses
           </h2>
         </div>
