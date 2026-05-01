@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 3.9,
+    "price": 19.99,
+    "level": "Beginner",
+    "description": "Learn HTML, CSS, JavaScript, React & Node.js.",
+    "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "React & Next.js Advanced Guide",
+    "instructor": "Sarah Smith",
+    "duration": "18 hours",
+    "rating": 4.7,
+    "price": 17.99,
+    "level": "Intermediate",
+    "description": "Build modern frontend apps with Next.js.",
+    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
+    "category": "Development"
+  },
+  {
+    "id": 3,
+    "title": "Fullstack MERN Project Course",
+    "instructor": "David Warner",
+    "duration": "22 hours",
+    "rating": 4.99,
+    "price": 21.99,
+    "level": "Intermediate",
+    "description": "Build real-world fullstack applications.",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    "category": "Development"
+  },
+
+  {
+    "id": 4,
+    "title": "Machine Learning A-Z",
+    "instructor": "Andrew Ng",
+    "duration": "25 hours",
+    "rating": 3.0,
+    "price": 29.99,
+    "level": "Beginner",
+    "description": "Hands-on ML with Python & real projects.",
+    "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
+    "category": "Machine Learning"
+  },
+  {
+    "id": 5,
+    "title": "Deep Learning & Neural Networks",
+    "instructor": "Geoffrey Hinton",
+    "duration": "30 hours",
+    "rating": 4.95,
+    "price": 34.99,
+    "level": "Advanced",
+    "description": "Master deep learning & AI models.",
+    "image": "https://images.unsplash.com/photo-1507146426996-ef05306b995a",
+    "category": "Machine Learning"
+  },
+  {
+    "id": 6,
+    "title": "AI & Data Science Bootcamp",
+    "instructor": "Elon Data",
+    "duration": "28 hours",
+    "rating": 4.92,
+    "price": 32.99,
+    "level": "Intermediate",
+    "description": "Become a data scientist.",
+    "image": "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56",
+    "category": "Machine Learning"
+  },
+
+  {
+    "id": 7,
+    "title": "Spoken English Mastery",
+    "instructor": "Emma Watson",
+    "duration": "12 hours",
+    "rating": 4.5,
+    "price": 12.99,
+    "level": "Beginner",
+    "description": "Improve fluency & speaking skills.",
+    "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+    "category": "English"
+  },
+  {
+    "id": 8,
+    "title": "Business English Communication",
+    "instructor": "Daniel Craig",
+    "duration": "15 hours",
+    "rating": 4.6,
+    "price": 14.99,
+    "level": "Intermediate",
+    "description": "Professional communication skills.",
+    "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644",
+    "category": "English"
+  },
+  {
+    "id": 9,
+    "title": "English Grammar & Writing",
+    "instructor": "Sophia Lee",
+    "duration": "14 hours",
+    "rating": 4.98,
+    "price": 11.99,
+    "level": "Beginner",
+    "description": "Master grammar and writing.",
+    "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+    "category": "English"
+  }
+]
