@@ -8,14 +8,14 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/10 border-b border-white/20">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#0f3d2e] to-[#1f5e4a] ">
       
       {/* 🔥 1400px Container */}
       <div className="max-w-[1400px] mx-auto px-4 flex items-center justify-between py-4 text-white">
         
         {/* Logo */}
-        <h1 className="text-2xl font-bold text-white animate-pulse">
-          SkillSphere
+          <h1 className="text-2xl font-bold text-white animate-pulse">
+            SkillSphere
         </h1>
 
         {/* Desktop Menu */}
@@ -63,7 +63,7 @@ export default function Navbar() {
 
       {/* 🔥 Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-gradient-to-r from-[#0f3d2e] to-[#1f5e4a] text-white backdrop-blur-md">
+        <div className="md:hidden bg-[#244D3F] text-white">
           
           <div className="max-w-[1400px] mx-auto px-4 py-6">
             
