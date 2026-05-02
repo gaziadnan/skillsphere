@@ -1,10 +1,8 @@
 export default function Hero() {
   return (
     <section className="pt-24 pb-20 bg-gradient-to-r from-[#0f3d2e] to-[#1f5e4a] text-white rounded-b-[60px]">
-      
       {/* ✅ 1400px Container */}
       <div className="max-w-[1400px] mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
-        
         {/* LEFT */}
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight">
@@ -48,13 +46,13 @@ export default function Hero() {
         </div>
 
         {/* RIGHT IMAGE */}
-       <div className="flex-1 flex justify-center md:justify-end">
-  <img
-    src="https://i.postimg.cc/3x1dK6kF/marketing.jpg"
-    alt="hero"
-    className="w-full max-w-md rounded-3xl shadow-lg"
-  />
-</div>
+        <div className="flex-1 flex justify-center md:justify-end">
+          <img
+            src="https://i.postimg.cc/3x1dK6kF/marketing.jpg"
+            alt="hero"
+            className="w-full max-w-md rounded-3xl shadow-lg"
+          />
+        </div>
       </div>
     </section>
   );

@@ -2,22 +2,26 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import courses from "@/data/courses.json";
-import { isLoggedIn } from "@/lib/auth";
+import courses from "../../data/courses.json";
+import { authClient } from "../../lib/auth-client";
 import Link from "next/link";
 
 export default function CoursesPage() {
   const router = useRouter();
+
   const [search, setSearch] = useState("");
   const [filtered, setFiltered] = useState(courses);
   const [category, setCategory] = useState("All");
 
+  // ✅ BetterAuth session
+  const { data: session, isPending } = authClient.useSession();
+
   // 🔐 Protect Route
   useEffect(() => {
-    if (!isLoggedIn()) {
+    if (!isPending && !session) {
       router.push("/login");
     }
-  }, []);
+  }, [session, isPending, router]);
 
   // 🔍 Search + Filter
   useEffect(() => {
@@ -38,6 +42,15 @@ export default function CoursesPage() {
 
   const categories = ["All", "Development", "Machine Learning", "English"];
 
+  // ⏳ Loader
+  if (isPending) {
+    return (
+      <div className="h-screen flex items-center justify-center">
+        Loading...
+      </div>
+    );
+  }
+
   return (
     <section className="bg-[#F8FAFC] py-16 min-h-screen">
       <div className="max-w-[1400px] mx-auto px-4">
@@ -45,7 +58,7 @@ export default function CoursesPage() {
         {/* 🔥 Header + Search */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-8">
           
-          <h1 className="text-3xl font-bold text-gray-800">
+          <h1 className="text-3xl font-bold text-gray-800 text-center md:text-left">
             All Courses
           </h1>
 
@@ -59,15 +72,15 @@ export default function CoursesPage() {
         </div>
 
         {/* 🔥 Categories */}
-        <div className="flex flex-wrap gap-3 mb-8">
+        <div className="flex flex-wrap gap-3 mb-8 justify-center md:justify-start">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setCategory(cat)}
-              className={`px-4 py-2 rounded-full border ${
+              className={`px-4 py-2 rounded-full border transition ${
                 category === cat
                   ? "bg-[#244D3F] text-white"
-                  : "text-gray-600"
+                  : "text-gray-600 hover:bg-gray-100"
               }`}
             >
               {cat}
@@ -81,7 +94,7 @@ export default function CoursesPage() {
             
             <div
               key={course.id}
-              className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-lg transition"
+              className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-lg transition duration-300"
             >
               
               {/* Image */}
@@ -89,6 +102,7 @@ export default function CoursesPage() {
                 <img
                   src={course.image}
                   className="w-full h-48 object-cover"
+                  alt={course.title}
                 />
               </div>
 
@@ -108,7 +122,7 @@ export default function CoursesPage() {
                     ⭐ {course.rating}
                   </span>
                   <span className="bg-gray-100 px-2 py-1 rounded">
-                    {course.duration}
+                    ⏱ {course.duration}
                   </span>
                 </div>
 

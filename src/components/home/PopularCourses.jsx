@@ -1,6 +1,7 @@
 "use client";
 
-import courses from "@/data/courses.json";
+// import courses from "@/data/courses.json";
+import courses from "../../data/courses.json";
 import Link from "next/link";
 
 export default function PopularCourses() {

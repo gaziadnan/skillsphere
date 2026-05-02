@@ -1,51 +1,71 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
-import courses from "@/data/courses.json";
 import { useEffect } from "react";
-import { isLoggedIn } from "@/lib/auth";
+import courses from "../../../data/courses.json";
+import { authClient } from "../../../lib/auth-client";
 
 export default function CourseDetails() {
   const { id } = useParams();
   const router = useRouter();
 
+  const { data: session, isPending } = authClient.useSession();
+
+  // 🔒 Protected Route
   useEffect(() => {
-    if (!isLoggedIn()) {
+    if (!isPending && !session) {
       router.push("/login");
     }
-  }, []);
+  }, [session, isPending, router]);
+
+  // ⏳ Loader
+  if (isPending) {
+    return (
+      <div className="h-screen flex items-center justify-center">
+        Loading...
+      </div>
+    );
+  }
 
   const course = courses.find((c) => c.id == id);
 
-  if (!course) return <p>Course not found</p>;
+  if (!course) {
+    return <div className="text-center mt-20">Course not found</div>;
+  }
 
   return (
-    <div className="max-w-[900px] mx-auto py-16 px-4">
+    <div className="max-w-[1400px] mx-auto px-4 py-20">
       
+      <h1 className="text-3xl font-bold mb-4">{course.title}</h1>
+
       <img
         src={course.image}
-        className="w-full h-80 object-cover rounded-xl"
+        className="w-full max-h-[400px] object-cover rounded-xl"
       />
 
-      <h1 className="text-3xl font-bold mt-6">
-        {course.title}
-      </h1>
+      <p className="mt-4 text-gray-600">{course.description}</p>
 
-      <p className="text-gray-600 mt-2">
-        {course.description}
-      </p>
+      <div className="mt-4 flex gap-4">
+        <span className="bg-green-100 px-3 py-1 rounded">
+          ⭐ {course.rating}
+        </span>
+
+        <span className="bg-blue-100 px-3 py-1 rounded">
+          ⏱ {course.duration}
+        </span>
+      </div>
 
       {/* Curriculum */}
-      <div className="mt-6">
-        <h2 className="text-xl font-semibold mb-2">
+      <div className="mt-8">
+        <h2 className="text-xl font-semibold mb-3">
           Course Curriculum
         </h2>
 
-        <ul className="list-disc ml-5 text-gray-600">
+        <ul className="list-disc ml-6 text-gray-600 space-y-1">
           <li>Introduction</li>
-          <li>Basics</li>
-          <li>Advanced Topics</li>
-          <li>Project</li>
+          <li>Basic Concepts</li>
+          <li>Hands-on Project</li>
+          <li>Final Assignment</li>
         </ul>
       </div>
     </div>
