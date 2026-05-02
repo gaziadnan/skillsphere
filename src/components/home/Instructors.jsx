@@ -31,7 +31,7 @@ export default function Instructors() {
       <div className="max-w-[1400px] mx-auto px-4">
         {/* Heading */}
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold text-gray-800">Top Instructors</h2>
+          <h2 className="text-3xl font-bold text-gray-800">Let's Meet Our Top Instructors</h2>
           <p className="text-gray-500 mt-2">
             Learn from industry experts and experienced mentors
           </p>
