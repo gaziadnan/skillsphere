@@ -69,7 +69,7 @@ export default function Navbar() {
     <img
       src={user?.image || "https://i.ibb.co/4pDNDk1/avatar.png"}
       alt="avatar"
-      className="w-5 h-5 object-cover"
+      className="w-8 h-8 object-cover"
       onError={(e) => {
         e.currentTarget.src = "https://i.ibb.co/4pDNDk1/avatar.png";
       }}
