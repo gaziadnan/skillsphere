@@ -5,15 +5,12 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { authClient } from "../../lib/auth-client";
 
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  // ✅ session
   const { data: session } = authClient.useSession();
   const user = session?.user;
 
-  // ✅ logout
   const handleSignOut = async () => {
     await authClient.signOut();
   };
@@ -21,7 +18,6 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#0f3d2e] to-[#1f5e4a]">
       
-      {/* Container */}
       <div className="max-w-[1400px] mx-auto px-4 flex items-center justify-between py-4 text-white">
         
         {/* Logo */}
@@ -29,61 +25,65 @@ export default function Navbar() {
           SkillSphere
         </h1>
 
-        {/* Desktop Menu */}
+        {/* Menu */}
         <ul className="hidden md:flex gap-6 font-medium">
           <li>
-            <Link href="/" className="hover:text-green-300">
+            <Link href="/" className="hover:text-green-300 transition">
               Home
             </Link>
           </li>
-
           <li>
-            <Link href="/courses" className="hover:text-green-300">
+            <Link href="/courses" className="hover:text-green-300 transition">
               Courses
             </Link>
           </li>
-
           <li>
-            <Link href="/profile" className="hover:text-green-300">
+            <Link href="/profile" className="hover:text-green-300 transition">
               My Profile
             </Link>
           </li>
         </ul>
 
-        {/* Desktop Right Side */}
-        <div className="hidden md:flex gap-3 items-center">
+        {/* Right Side */}
+        <div className="hidden md:flex items-center gap-3 relative z-50">
           
           {!user ? (
             <>
-              {/* Not Logged In */}
               <Link href="/login">
-                <button className="px-4 py-2 rounded-full bg-white text-black">
-                  Login
-                </button>
-              </Link>
+  <button className="bg-green-500 px-6 py-2 text-white font-semibold hover:bg-green-400 transition-all duration-300 rounded-full">
+    Login
+  </button>
+</Link>
 
-              <Link href="/register">
-                <button className="px-5 py-2 rounded-full bg-white text-black font-semibold">
-                  Register
-                </button>
-              </Link>
+<Link href="/register">
+  <button className="bg-white text-[#244D3F] px-6 py-2 font-semibold rounded-full hover:bg-[#244D3F] hover:text-white transition">
+    Register
+  </button>
+</Link>
             </>
           ) : (
             <>
-              {/* Logged In */}
-              <div className="px-4 py-2 rounded-full bg-white text-black">
-                {user.name}
-              </div>
-
-              <button
-                onClick={handleSignOut}
-                className="px-5 py-2 rounded-full bg-white text-black font-semibold"
-              >
-                Logout
-              </button>
+              {/* ✅ FIXED Avatar */}
+           <Link href="/profile">
+  <div className=" rounded-full overflow-hidden border-2 border-white flex-shrink-0 cursor-pointer hover:scale-110 transition duration-300">
+    <img
+      src={user?.image || "https://i.ibb.co/4pDNDk1/avatar.png"}
+      alt="avatar"
+      className="w-5 h-5 object-cover"
+      onError={(e) => {
+        e.currentTarget.src = "https://i.ibb.co/4pDNDk1/avatar.png";
+      }}
+    />
+  </div>
+</Link>      {/* Logout */}
+          <button
+  onClick={handleSignOut}
+  className="bg-green-500 px-6 py-2 text-white font-semibold hover:bg-green-400 transition-all duration-300 rounded-full"
+>
+  Logout
+</button>
             </>
           )}
-
         </div>
 
         {/* Mobile Icon */}
@@ -101,20 +101,11 @@ export default function Navbar() {
           <div className="max-w-[1400px] mx-auto px-4 py-6">
             
             <ul className="flex flex-col gap-5 text-lg text-center">
-              <Link href="/" onClick={() => setOpen(false)}>
-                Home
-              </Link>
-
-              <Link href="/courses" onClick={() => setOpen(false)}>
-                Courses
-              </Link>
-
-              <Link href="/profile" onClick={() => setOpen(false)}>
-                My Profile
-              </Link>
+              <Link href="/" onClick={() => setOpen(false)}>Home</Link>
+              <Link href="/courses" onClick={() => setOpen(false)}>Courses</Link>
+              <Link href="/profile" onClick={() => setOpen(false)}>My Profile</Link>
             </ul>
 
-            {/* Mobile Auth */}
             <div className="flex flex-col gap-3 mt-6">
               
               {!user ? (
@@ -124,7 +115,6 @@ export default function Navbar() {
                       Login
                     </button>
                   </Link>
-                  
 
                   <Link href="/register">
                     <button className="w-full py-2 rounded-full bg-white text-black">
@@ -134,19 +124,28 @@ export default function Navbar() {
                 </>
               ) : (
                 <>
-                  <div className="w-full py-2 text-center bg-white text-black rounded-full">
-                    {user.name}
+                  {/* Mobile Avatar */}
+                  <div className="flex justify-center">
+                    <div className="w-12 h-12 min-w-[48px] min-h-[48px] rounded-full overflow-hidden border-2 border-white">
+                      <img
+                        src={user?.image || "https://i.ibb.co/4pDNDk1/avatar.png"}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.target.src = "https://i.ibb.co/4pDNDk1/avatar.png";
+                        }}
+                      />
+                    </div>
                   </div>
 
+                  {/* Logout */}
                   <button
                     onClick={handleSignOut}
-                    className="w-full py-2 rounded-full bg-white text-black"
+                    className="w-full py-2 rounded-full bg-white text-black hover:bg-red-500 hover:text-white transition"
                   >
                     Logout
                   </button>
                 </>
               )}
-
             </div>
           </div>
         </div>
