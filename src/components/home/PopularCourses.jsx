@@ -15,7 +15,7 @@ export default function PopularCourses() {
         
         {/* Heading */}
         <div className="mb-10 mt-8">
-          <h2 className="text-3xl text-center font-bold text-gray-800">
+          <h2 className="text-4xl text-center font-bold text-gray-800">
             Popular Courses
           </h2>
         </div>

@@ -52,7 +52,7 @@ export default function Tips() {
       <div className="max-w-[1400px] mx-auto px-4">
 
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800">
+          <h2 className="text-4xl font-bold text-gray-800">
             Learning Tips
           </h2>
         </div>

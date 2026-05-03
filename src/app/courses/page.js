@@ -52,13 +52,13 @@ export default function CoursesPage() {
   }
 
   return (
-    <section className="bg-[#F8FAFC] py-16 min-h-screen">
+    <section className="bg-[#F8FAFC] mt-10 py-20 min-h-screen">
       <div className="max-w-[1400px] mx-auto px-4">
 
         {/* 🔥 Header + Search */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-8">
           
-          <h1 className="text-3xl font-bold text-gray-800 text-center md:text-left">
+          <h1 className="text-4xl font-bold text-gray-800 text-center md:text-left">
             All Courses
           </h1>
 
