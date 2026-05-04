@@ -1,5 +1,6 @@
 "use client";
-localStorage.setItem("user", "loggedIn");
+
+
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import Link from "next/link";
@@ -18,8 +19,14 @@ import {
 } from "@heroui/react";
 
 import { authClient } from "../../lib/auth-client";
+import { useEffect } from "react";
 
 const SignInPage = () => {
+
+ useEffect(() => {
+    localStorage.setItem('user', 'loggedIn')
+  }, []);
+
   const router = useRouter();
 
   // Email Login

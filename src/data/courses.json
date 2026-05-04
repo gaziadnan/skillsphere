@@ -8,7 +8,7 @@
     "price": 19.99,
     "level": "Beginner",
     "description": "Learn HTML, CSS, JavaScript, React & Node.js.",
-    "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    "image": "https://media.istockphoto.com/id/2267461090/photo/digital-programmer-working-on-code-with-various-programming-language-elements-displayed-on.jpg?s=612x612&w=0&k=20&c=9DVCzcWuHiG_EUI48T5K69WyrY_FxevjJqf-gLNdAAE=",
     "category": "Development"
   },
   {
@@ -20,7 +20,7 @@
     "price": 17.99,
     "level": "Intermediate",
     "description": "Build modern frontend apps with Next.js.",
-    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
+    "image": "https://media.istockphoto.com/id/1489767350/photo/developers-work-at-home-programmers-write-coding-apps-for-use-with-business-services-on-the.jpg?s=612x612&w=0&k=20&c=HWGPfujxHgMYu1ib_n75IpfYPL28kBbypSGsSoBbLYE=",
     "category": "Development"
   },
   {
@@ -32,7 +32,7 @@
     "price": 21.99,
     "level": "Intermediate",
     "description": "Build real-world fullstack applications.",
-    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    "image": "https://media.istockphoto.com/id/1162709822/photo/full-stack-developer-with-digital-java-code-text-full-stack-developer-and-computer-software.jpg?s=612x612&w=0&k=20&c=2HdyNGPfN6CQLf3PuYqGcgReofHDTKqX4maNFN4-3Js=",
     "category": "Development"
   },
 
@@ -45,7 +45,7 @@
     "price": 29.99,
     "level": "Beginner",
     "description": "Hands-on ML with Python & real projects.",
-    "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
+    "image": "https://media.istockphoto.com/id/1515913422/photo/a-data-analyst-using-technology-ai-for-working-tool-for-data-analysis-chatbot-chat-with-ai.jpg?s=612x612&w=0&k=20&c=oOKLdZJpcsrUbNrnGVf8TwoIdYud4mWoBkx1A3PdXI0=",
     "category": "Machine Learning"
   },
   {
@@ -57,7 +57,7 @@
     "price": 34.99,
     "level": "Advanced",
     "description": "Master deep learning & AI models.",
-    "image": "https://images.unsplash.com/photo-1507146426996-ef05306b995a",
+    "image": "https://media.istockphoto.com/id/2084953049/photo/neural-network-nodes-deep-learning-artificial-intelligence-machine-learning-model.jpg?s=612x612&w=0&k=20&c=fAiOT0QiQ0Uz2gSb8Pe4-4JuVg_zHGxhIMQ_fU6hZsI=",
     "category": "Machine Learning"
   },
   {
@@ -69,7 +69,7 @@
     "price": 32.99,
     "level": "Intermediate",
     "description": "Become a data scientist.",
-    "image": "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56",
+    "image": "https://media.istockphoto.com/id/1503735047/photo/data-scientists-analyze-and-visualize-massive-data-on-virtual-screens-using-ai-to-process.jpg?s=612x612&w=0&k=20&c=hJNm_4TjtohMG9JaTQ_aYETP4p1eB8HXDIeQeiMcoRY=",
     "category": "Machine Learning"
   },
 
@@ -82,7 +82,7 @@
     "price": 12.99,
     "level": "Beginner",
     "description": "Improve fluency & speaking skills.",
-    "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+    "image": "https://media.istockphoto.com/id/2174878340/photo/textbooks-on-school-table.jpg?s=612x612&w=0&k=20&c=jMx1OvDncNRRlqElZAtp5GdvAtj86pXb8_oK0-OePxo=",
     "category": "English"
   },
   {
@@ -94,7 +94,7 @@
     "price": 14.99,
     "level": "Intermediate",
     "description": "Professional communication skills.",
-    "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644",
+    "image": "https://media.istockphoto.com/id/2169536918/photo/toefl-inscription-on-cubes-the-test-of-english-as-a-foreign-language-education-concept-3d.jpg?s=612x612&w=0&k=20&c=r3Qy1yKd_IeinsXWMver2EOub3QbaexEHTp_tjs3GTg=",
     "category": "English"
   },
   {
@@ -106,7 +106,7 @@
     "price": 11.99,
     "level": "Beginner",
     "description": "Master grammar and writing.",
-    "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+    "image": "https://media.istockphoto.com/id/1051721290/photo/learn-english-concept-education-and-career-opportunities.jpg?s=612x612&w=0&k=20&c=krW8rTMOF9ROQ66ufHVkefuMJ29ol1G21pGbTml6z24=",
     "category": "English"
   }
 ]

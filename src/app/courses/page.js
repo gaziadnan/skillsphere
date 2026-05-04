@@ -13,17 +13,17 @@ export default function CoursesPage() {
   const [filtered, setFiltered] = useState(courses);
   const [category, setCategory] = useState("All");
 
-  // ✅ BetterAuth session
+
   const { data: session, isPending } = authClient.useSession();
 
-  // 🔐 Protect Route
+ 
   useEffect(() => {
     if (!isPending && !session) {
       router.push("/login");
     }
   }, [session, isPending, router]);
 
-  // 🔍 Search + Filter
+
   useEffect(() => {
     let data = courses;
 
@@ -42,7 +42,7 @@ export default function CoursesPage() {
 
   const categories = ["All", "Development", "Machine Learning", "English"];
 
-  // ⏳ Loader
+
   if (isPending) {
     return (
       <div className="h-screen flex items-center justify-center">
@@ -55,7 +55,6 @@ export default function CoursesPage() {
     <section className="bg-[#F8FAFC] mt-10 py-20 min-h-screen">
       <div className="max-w-[1400px] mx-auto px-4">
 
-        {/* 🔥 Header + Search */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-8">
           
           <h1 className="text-4xl font-bold text-gray-800 text-center md:text-left">
@@ -71,7 +70,6 @@ export default function CoursesPage() {
           />
         </div>
 
-        {/* 🔥 Categories */}
         <div className="flex flex-wrap gap-3 mb-8 justify-center md:justify-start">
           {categories.map((cat) => (
             <button
@@ -88,7 +86,7 @@ export default function CoursesPage() {
           ))}
         </div>
 
-        {/* 🔥 Cards */}
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((course) => (
             
@@ -97,7 +95,7 @@ export default function CoursesPage() {
               className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-lg transition duration-300"
             >
               
-              {/* Image */}
+        
               <div className="rounded-xl overflow-hidden">
                 <img
                   src={course.image}
@@ -106,7 +104,7 @@ export default function CoursesPage() {
                 />
               </div>
 
-              {/* Content */}
+            
               <div className="mt-4">
                 <h3 className="text-lg font-semibold">
                   {course.title}
@@ -116,7 +114,7 @@ export default function CoursesPage() {
                   {course.instructor}
                 </p>
 
-                {/* Rating + Duration */}
+              
                 <div className="flex gap-2 mt-2 text-sm">
                   <span className="bg-gray-100 px-2 py-1 rounded">
                     ⭐ {course.rating}
@@ -126,7 +124,7 @@ export default function CoursesPage() {
                   </span>
                 </div>
 
-                {/* Button */}
+              
                 <Link href={`/courses/${course.id}`}>
                   <button className="mt-4 w-full border border-[#244D3F] text-[#244D3F] py-2 rounded-lg hover:bg-[#244D3F] hover:text-white transition">
                     View Details

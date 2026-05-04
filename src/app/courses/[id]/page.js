@@ -11,14 +11,14 @@ export default function CourseDetails() {
 
   const { data: session, isPending } = authClient.useSession();
 
-  // 🔒 Protected Route
+
   useEffect(() => {
     if (!isPending && !session) {
       router.push("/login");
     }
   }, [session, isPending, router]);
 
-  // ⏳ Loader
+
   if (isPending) {
     return (
       <div className="h-screen flex items-center justify-center">
@@ -55,7 +55,6 @@ export default function CourseDetails() {
         </span>
       </div>
 
-      {/* Curriculum */}
       <div className="mt-8">
         <h2 className="text-xl font-semibold mb-3">
           Course Curriculum
